@@ -54,7 +54,7 @@ function crearSemaforo() {
             apagarLuces();
             luces[color].style.opacity = "1";
             i++;
-        }, 1000); // cambio cada segundo
+        }, 1000); 
     }
 
     function detenerCiclo() {
