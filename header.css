@@ -1,0 +1,32 @@
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn.rojo { background-color: red; }
+.btn.amarillo { background-color: gold; color: black; }
+.btn.verde { background-color: green; }
+.btn.negro { background-color: black; }
+
+  

@@ -1,0 +1,32 @@
+.semaforo {
+    width: 120px;
+    background-color: #333;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.luz {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 10px auto;
+    opacity: 0.3;
+    transition: opacity 0.5s ease;
+}
+
+.luz.rojo { background-color: #f00; }
+.luz.amarillo { background-color: #ff0; }
+.luz.verde { background-color: #0f0; }
+
+.estado-conexion {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+#estado-texto {
+    font-weight: bold;
+}
