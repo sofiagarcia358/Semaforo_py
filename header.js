@@ -10,7 +10,7 @@ function crearHeader(callbackCambiarColor) {
         { color: "rojo", label: "Rojo" },
         { color: "amarillo", label: "Amarillo" },
         { color: "verde", label: "Verde" },
-        { color: "negro", label: "Apagar" }
+        { color: "negro", label: "Reiniciar Ciclo" }  // texto actualizado para más claridad
     ];
 
     const contenedorBotones = document.createElement("div");
@@ -21,12 +21,20 @@ function crearHeader(callbackCambiarColor) {
         btn.innerText = label;
         btn.className = `btn ${color}`;
         btn.onclick = () => {
-            const estado = color === "negro" ? null : color;
+            let estado;
+            if (color === "amarillo") {
+                estado = "parpadeo";  // Parpadeo del amarillo
+            } else if (color === "negro") {
+                estado = "ciclo";      // Reinicia el ciclo automático
+            } else {
+                estado = color;        // rojo o verde
+            }
+
             fetch("https://semaforo67-e5e01-default-rtdb.firebaseio.com/estado.json", {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ luz: estado })
-            });
+            }).catch(err => console.error("Error al actualizar estado:", err));
 
             callbackCambiarColor(estado);
         };
