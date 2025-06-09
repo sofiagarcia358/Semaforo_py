@@ -1,0 +1,40 @@
+.panel-temperatura {
+    background-image: url(https://i.pinimg.com/736x/77/a3/72/77a372265aebcee19391ecd5b6449104.jpg);
+    width: 220px;
+    padding: 15px;
+    height: 22rem;
+    border: 2px solid #2b2b2b;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #000000;
+    box-shadow: 5px 5px 5px 5px rgb(219, 219, 219);
+    margin-left: 30px;
+    margin-top: 8rem;
+}
+
+.panel-temperatura h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.info-temperatura {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: white;
+}
+
+.titulo-pendi {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    font-style: italic;
+    color: #ffffff;
+}
+
+.ventilador-img {
+    width: 10rem;
+    height: 10rem;
+    margin-top: 40px;
+    border: 3px solid rgb(214, 214, 214);
+    border-radius: 6px;
+}

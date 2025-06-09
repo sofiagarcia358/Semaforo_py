@@ -1,3 +1,4 @@
+import { crearTemperaturaPanel, actualizarTemperaturaDesdeFirebase } from './Temperaturas/temperatura.js';
 import { crearSemaforo } from './Senna/sema.js';
 import { crearHeader } from './header.js';
 
@@ -17,9 +18,21 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const header = crearHeader(actualizarSemaforo);
+    const temperaturaPanel = crearTemperaturaPanel();
 
-    root.appendChild(header);
-    root.appendChild(semaforo);
+    const contenedorIzquierdo = document.createElement("div");
+    contenedorIzquierdo.className = "contenedor-izquierdo";
+    contenedorIzquierdo.appendChild(header);
+    contenedorIzquierdo.appendChild(semaforo);
+
+    const contenedorPrincipal = document.createElement("div");
+    contenedorPrincipal.className = "contenedor-principal";
+
+    contenedorPrincipal.appendChild(contenedorIzquierdo);
+    contenedorPrincipal.appendChild(temperaturaPanel);
+
+    root.appendChild(contenedorPrincipal);
+
+    setInterval(actualizarTemperaturaDesdeFirebase, 5000); 
+    actualizarTemperaturaDesdeFirebase(); 
 });
-
-

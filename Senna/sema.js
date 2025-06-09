@@ -32,7 +32,7 @@ function crearSemaforo() {
     }
 
     function iniciarParpadeo() {
-        detenerCiclo();  // detener ciclo si está activo
+        detenerCiclo();
         detenerParpadeo();
         parpadeoActivo = true;
         let visible = false;
@@ -40,13 +40,13 @@ function crearSemaforo() {
         intervaloParpadeo = setInterval(() => {
             visible = !visible;
             luces.amarillo.style.opacity = visible ? "1" : "0.3";
-        }, 200); // más rápido
+        }, 200);
     }
 
     function iniciarCiclo() {
         detenerParpadeo();
         detenerCiclo();
-        const colores = ['rojo', 'verde', 'amarillo'];
+        const colores = ['rojo', 'amarillo', 'verde'];
         let i = 0;
 
         intervaloCiclo = setInterval(() => {
@@ -54,7 +54,7 @@ function crearSemaforo() {
             apagarLuces();
             luces[color].style.opacity = "1";
             i++;
-        }, 1000); 
+        }, 1000);
     }
 
     function detenerCiclo() {
@@ -76,7 +76,7 @@ function crearSemaforo() {
                     iniciarParpadeo();
                 } else if (estado === "ciclo") {
                     iniciarCiclo();
-                } else if (['rojo', 'verde'].includes(estado)) {
+                } else if (['rojo', 'amarillo', 'verde'].includes(estado)) {
                     detenerParpadeo();
                     detenerCiclo();
                     apagarLuces();
@@ -97,3 +97,4 @@ function crearSemaforo() {
 }
 
 export { crearSemaforo };
+

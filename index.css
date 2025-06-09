@@ -1,3 +1,22 @@
-.body{
-    background-image: url(https://image.slidesdocs.com/responsive-images/background/blue-sky-street-urban-path-view-highway-powerpoint-background_5a01e3779a__960_540.jpg);
+.contenedor-principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    min-height: 80vh;
+    padding: 20px; /* para que no pegue a los bordes en móvil */
+}
+
+/* En pantallas pequeñas (teléfonos) */
+@media (max-width: 768px) {
+    .contenedor-principal {
+        flex-direction: column;
+        gap: 20px; /* menos espacio en móvil */
+    }
+
+    .contenedor-izquierdo {
+        width: 100%;
+        align-items: center;
+        text-align: center; /* útil si hay texto */
+    }
 }
